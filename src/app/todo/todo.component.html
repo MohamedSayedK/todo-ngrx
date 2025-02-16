@@ -1,0 +1,9 @@
+<h1>Let's get things done</h1>
+<input type="text" [(ngModel)]="todo" />
+<button (click)="addTodo()">Add Todo</button>
+<ol>
+  <li *ngFor="let todo of allTodos$ | async">
+    <p>{{ todo.content }}</p>
+    <button (click)="deleteTodo(todo)">Delete</button>
+  </li>
+</ol>
